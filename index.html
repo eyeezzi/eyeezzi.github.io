@@ -12,9 +12,9 @@
 
 <body>
     <div class="container">
-    	<div class="row">
-    		<h1 class="col-xs-12">&nbsp;</h1>
-    	</div>
+        <div class="row">
+            <h1 class="col-xs-12">&nbsp;</h1>
+        </div>
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <form class="">
@@ -22,6 +22,7 @@
                         <div class="col-md-6 form-group">
                             <label for="courseSelect">Course</label>
                             <select class="form-control" id="courseSelect">
+                                <option>Generic</option>
                                 <option>CMPT</option>
                                 <option>MACM</option>
                                 <option>PSYC</option>
@@ -33,6 +34,7 @@
                         <div class="col-md-6 form-group">
                             <label for="courseNumberSelect">Number</label>
                             <select class="form-control" id="courseNumberSelect">
+                                <option>N/A</option>
                                 <option>106</option>
                                 <option>225</option>
                                 <option>307</option>
@@ -42,23 +44,23 @@
                             </select>
                         </div>
                     </div>
-                    <!-- date -->
-                    <div class="form-group">
-                        <label for="example-date-input">Date</label>
-                        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                    </div>
-                    <!-- time -->
                     <div class="form-group row">
+                        <!-- start date -->
+                        <div class="form-group col-md-6">
+                            <label for="start-date-input">Date</label>
+                            <input class="form-control" type="date" value="2016-10-14" id="start-date-input">
+                        </div>
                         <!-- start time -->
                         <div class="form-group col-md-6">
                             <label for="start-time-input">Start Time</label>
                             <input class="form-control" type="time" value="20:32:00" id="start-time-input">
                         </div>
-                        <!-- end time -->
-                        <div class="form-group col-md-6">
-                            <label for="end-time-input">End Time</label>
-                            <input class="form-control" type="time" value="22:00:00" id="end-time-input">
-                        </div>
+                    </div>
+                    <!-- duration -->
+                    <div class="form-group">
+                        <label for="duration-input">Duration (hrs)</label>
+                        <input class="form-control" type="range" min="0.5" max="4" step="0.5" value="1" id="duration-input" aria-describedby="durationHelp">
+                        <small id="durationHelp" class="form-text text-muted">We'll automatically delete your session after its duration</small>
                     </div>
                     <!-- campus -->
                     <fieldset class="form-group">
@@ -84,13 +86,14 @@
                     <!-- location -->
                     <div class="form-group">
                         <label for="exactLocation">Location</label>
-                        <input type="text" class="form-control" id="exactLocation" aria-describedby="locationHelp" placeholder="Enter your study location on campus">
-                        <small id="locationHelp" class="form-text text-muted">For instance: Room #1004 in the library.</small>
+                        <input type="text" class="form-control" id="exactLocation" aria-describedby="locationHelp" placeholder="e.g Room 3001, Bennett Library" required>
+                        <small id="locationHelp" class="form-text text-muted">We'll only show people your location when they join your session.</small>
                     </div>
                     <!-- # of attendees -->
                     <div class="form-group">
                         <label for="max-attendees">Max Number of Attendees</label>
-                        <input class="form-control" type="number" value="5" id="max-attendees">
+                        <input class="form-control" type="number" min="1" max="5" value="2" id="max-attendees" aria-describedby="attendeesHelp">
+                        <small id="attendeesHelp" class="form-text text-muted">Once this many people join your session, we'll stop broadcasting it.</small>
                     </div>
                     <!-- description -->
                     <div class="form-group">
@@ -99,12 +102,12 @@
                         <small id="descriptionHelp" class="form-text text-muted">For instance, "I will be studying for Midterm 1".</small>
                     </div>
                     <!-- create button -->
-                    <button type="CREATE SESSION" class="btn btn-primary btn-lg col-xs-12 col-md-6 offset-md-3">START SESSION</button>
+                    <button type="CREATE SESSION" class="btn btn-primary btn-lg col-xs-12 col-md-6 offset-md-3">CREATE SESSION</button>
                 </form>
             </div>
         </div>
         <div class="row">
-        	<h3 class="col-xs-12">&nbsp;</h3>
+            <h3 class="col-xs-12">&nbsp;</h3>
         </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
