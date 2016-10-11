@@ -17,52 +17,64 @@
     .col-margin {
         margin-bottom: 10px;
     }
-
     /*xs*/
+    
     header h1 {
-        text-align: center; 
-        margin-top: 1em; 
-        color: #ccc;
+        text-align: center;
+        margin-top: 1em;
+        color: #a6192e;
         font: 2em arial, sans-serif;
         margin-bottom: 0
     }
+    
     header p {
-        color: #ccc; 
+        color: #ccc;
         text-align: center;
     }
+    
     p.info {
-        color: #555;
-        text-align: center; 
-        font: 1.5em arial, sans-serif; 
+        color: #54585a;
+        text-align: center;
+        font: 1.5em arial, sans-serif;
     }
+    
     p.info:nth-child(1) {
         margin-top: 1.5em;
     }
+    
     p.info:nth-child(3) {
         font-size: 1em;
         margin-top: 1.5em;
         margin-bottom: 4em;
         color: #999;
     }
+    
     footer {
         margin-top: 5em;
     }
-    
     /*sm*/
+    
     @media(min-width:34em) {
-        header h1 { font-size: 2.5em; }
+        header h1 {
+            font-size: 2.5em;
+        }
     }
-    
     /*md*/
-    @media(min-width:48em) {
-        p.info { font-size: 1.85em; }
-        p.info:nth-child(3) { font-size: 1.3em; margin-bottom: 3em}
-    }
-        
-    /*lg*/
-    @media(min-width:62em) {}
     
+    @media(min-width:48em) {
+        p.info {
+            font-size: 1.85em;
+        }
+        p.info:nth-child(3) {
+            font-size: 1.3em;
+            margin-bottom: 3em
+        }
+    }
+    /*lg*/
+    
+    @media(min-width:62em) {}
     /*xl*/
+    
     @media(min-width:75em) {}
     </style>
 </head>
@@ -78,12 +90,8 @@
         <p class="info">Studying? Let others join you.</p>
         <p class="info">Its that simple...just how we like it!</p>
         <form action="" class="col-sm-9 col-md-8 col-lg-7 col-xl-6 col-centered">
-            <div class="form-group">
-                <button formaction="" class="btn btn-lg col-xs-12" style="margin-bottom:0.5em">FIND A SESSION</button>
-            </div>
-            <div class="form-group">
-                <button formaction="create_session.html" class="btn btn-lg bg-primary col-xs-12">CREATE A SESSION</button>
-            </div>
+            <button formaction="" class="btn btn-lg btn-block btn-success" style="margin-bottom:0.5em">FIND A SESSION</button>
+            <button formaction="create_session.html" class="btn btn-lg btn-primary btn-block">CREATE A SESSION</button>
         </form>
     </div>
     <footer class="container-fluid">
