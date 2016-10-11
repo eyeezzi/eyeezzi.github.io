@@ -13,7 +13,7 @@
         float: none;
         margin: 0 auto;
     }
-
+    
     header h1 {
         text-align: center;
         margin-top: 1em;
@@ -21,22 +21,29 @@
         font: 1.5em arial, sans-serif;
         margin-bottom: 1em
     }
-
     /*sm*/
+    
     @media(min-width:34em) {
-        header h1 { font-size: 2em; }
+        header h1 {
+            font-size: 2em;
+        }
     }
-    
     /*md*/
-    @media(min-width:48em) {
-        p.info { font-size: 1.85em; }
-        p.info:nth-child(3) { font-size: 1.3em; margin-bottom: 3em}
-    }
-        
-    /*lg*/
-    @media(min-width:62em) {}
     
+    @media(min-width:48em) {
+        p.info {
+            font-size: 1.85em;
+        }
+        p.info:nth-child(3) {
+            font-size: 1.3em;
+            margin-bottom: 3em
+        }
+    }
+    /*lg*/
+    
+    @media(min-width:62em) {}
     /*xl*/
+    
     @media(min-width:75em) {}
     </style>
 </head>
@@ -51,23 +58,15 @@
             <div class="col-md-8 col-lg-7 col-centered">
                 <form class="">
                     <div class="form-group row">
+                        <!-- course name -->
                         <div class="col-sm-6 form-group">
-                            <label for="courseSelect">Course</label>
-                            <select class="form-control" id="courseSelect">
-                                
-                            </select>
+                            <label for="courseName">Course</label>
+                            <input type="text" class="form-control" id="courseName" aria-describedby="courseNameHelp" placeholder="CMPT" required>
                         </div>
+                        <!-- course number -->
                         <div class="col-sm-6 form-group">
-                            <label for="courseNumberSelect">Number</label>
-                            <select class="form-control" id="courseNumberSelect">
-                                <option>N/A</option>
-                                <option>106</option>
-                                <option>225</option>
-                                <option>307</option>
-                                <option>383</option>
-                                <option>371</option>
-                                <option>433</option>
-                            </select>
+                            <label for="courseNumber">Number</label>
+                            <input type="number" class="form-control" id="courseNumber" aria-describedby="courseNumberHelp" placeholder="106" required>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -142,18 +141,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    <!-- <script>
+    var courseNames = [];
+    var courseNumbers = [];
 
-    <script>
-        var departments = ["ACMA","ALS","APMA","ARAB","ARCH","ASC","BISC","BOT","BPK","BUEC","BUS","CHEM","CHIN","CMNS","CMPT","COGS","CRIM","DDP","DEVS","DIAL","DMED","EASC","ECO","ECON","EDPR","EDUC","ENGL","ENSC","ENV","EVSC","EXCH","EXPL","FAL","FAN","FEP","FNLG","FNST","FPA","FREN","GEOG","GERM","GERO","GRAD","GRK","GSWS","HIST","HS","HSCI","HUM","IAT","IS","ITAL","JAPN","LANG","LAS","LBRL","LBST","LING","LS","MACM","MASC","MATH","MBB","MCRT","MQPT","MSE","MSSC","NUSC","ONC","PERS","PHIL","PHYS","PLCY","POL","PSYC","PUB","REM","SA","SAR","SCD","SCI","SPAN","STAT","URB","WDA","WL"]
+    getCourseNamesAndNumbers(courseNames, courseNumbers)
 
-        var sel = document.getElementById('courseSelect');
-        for(var i = 0; i < departments.length; i++) {
-            var opt = document.createElement('option');
-            opt.innerHTML = departments[i];
-            opt.value = departments[i];
-            sel.appendChild(opt);
+    function getCourseNamesAndNumbers(courseNames, courseNumbers) {
+
+        $.get("http://api.lib.sfu.ca/courses/departments", function(data) {
+            courseNames = data;
+            getCourseNumbers(courseNames, 0, courseNumbers)
+        })
+    }
+
+    function getCourseNumbers(courseNames, counter, courseNumbers) {
+
+        if (counter === undefined) counter = 0;
+        if (counter >= courseNames.length) {
+            console.log("*******");
+            console.log(courseNames);
+            console.log("%%%%%%%");
+            console.log(courseNumbers);
+            return;
         }
-    </script>
+
+        var url = "http://api.lib.sfu.ca/courses/numbers?term=&department=" + courseNames[counter];
+
+        $.get(url, function(data) {
+            courseNumbers.push(data)
+            counter++;
+            getCourseNumbers(courseNames, counter, courseNumbers)
+        })
+    }
+    </script> -->
 </body>
 
 </html>
