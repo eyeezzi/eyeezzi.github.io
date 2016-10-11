@@ -13,111 +13,46 @@
         float: none;
         margin: 0 auto;
     }
+    
+    .col-margin {
+        margin-bottom: 10px;
+    }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1 style="text-align:center; margin: 1em 0; color:#ccc">Specify your study session</h1>
+        <h1 style="text-align:center; margin-top: 1em; color:#ccc">Studywitme</h1>
+        <p style="color:#ccc; text-align:center">Study socially</p>
         <hr>
-        <div class="row">
-            <div class="col-md-8 col-lg-7 col-centered">
-                <form class="">
-                    <div class="form-group row">
-                        <div class="col-sm-6 form-group">
-                            <label for="courseSelect">Course</label>
-                            <select class="form-control" id="courseSelect">
-                                <option>Generic</option>
-                                <option>CMPT</option>
-                                <option>MACM</option>
-                                <option>PSYC</option>
-                                <option>HSC</option>
-                                <option>IAT</option>
-                                <option>ENSC</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-6 form-group">
-                            <label for="courseNumberSelect">Number</label>
-                            <select class="form-control" id="courseNumberSelect">
-                                <option>N/A</option>
-                                <option>106</option>
-                                <option>225</option>
-                                <option>307</option>
-                                <option>383</option>
-                                <option>371</option>
-                                <option>433</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <!-- start date -->
-                        <div class="form-group col-sm-6">
-                            <label for="start-date-input">Date</label>
-                            <input class="form-control" type="date" value="2016-10-14" id="start-date-input">
-                        </div>
-                        <!-- start time -->
-                        <div class="form-group col-sm-6">
-                            <label for="start-time-input">Start Time</label>
-                            <input class="form-control" type="time" value="20:32:00" id="start-time-input">
-                        </div>
-                    </div>
-                    <!-- duration -->
-                    <div class="form-group">
-                        <label for="duration-input">Duration (hrs)</label>
-                        <input class="form-control" type="range" min="0.5" max="4" step="0.5" value="1" id="duration-input" aria-describedby="durationHelp">
-                        <small id="durationHelp" class="form-text text-muted">We'll automatically delete your session after its duration</small>
-                    </div>
-                    <!-- campus -->
-                    <fieldset class="form-group">
-                        <legend>Campus</legend>
-                        <!-- <div class="row"> -->
-                        <div class="col-sm-4">
-                            <label class="form-check-inline">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked> Burnaby
-                            </label>
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-check-inline">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2"> Surrey
-                            </label>
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-check-inline">
-                                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3"> Vancouver
-                            </label>
-                        </div>
-                        <!-- </div> -->
-                    </fieldset>
-                    <!-- location -->
-                    <div class="form-group">
-                        <label for="exactLocation">Location</label>
-                        <input type="text" class="form-control" id="exactLocation" aria-describedby="locationHelp" placeholder="e.g Room 3001, Bennett Library" required>
-                        <small id="locationHelp" class="form-text text-muted">We'll only show people your location when they join your session.</small>
-                    </div>
-                    <!-- # of attendees -->
-                    <div class="form-group">
-                        <label for="max-attendees">Max Number of Attendees</label>
-                        <input class="form-control" type="number" min="1" max="5" value="2" id="max-attendees" aria-describedby="attendeesHelp">
-                        <small id="attendeesHelp" class="form-text text-muted">Once this many people join your session, we'll stop broadcasting it.</small>
-                    </div>
-                    <!-- description -->
-                    <div class="form-group">
-                        <label for="exampleTextarea">Description</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="4" aria-describedby="descriptionHelp"></textarea>
-                        <small id="descriptionHelp" class="form-text text-muted">For instance, "I will be studying for Midterm 1".</small>
-                    </div>
-                    <!-- create button -->
-                    <button type="submit" class="btn btn-primary btn-lg col-xs-12">CONTINUE</button>
-                    <!-- demo link -->
-                    <div class="row">
-                        <a href="confirm_creation.html" class="col-xs-12" style="text-align:center;margin-top:20px">Next</a>
-                    </div>
-                </form>
+        <p style="color:#555; text-align:center; font:2em arial, sans-serif; margin-top:1.5em">Find someone studying, join them.</p>
+        <p style="color:#555; text-align:center; font:2em arial, sans-serif">Studying? Let others join you.</p>
+        <p style="color:#888; text-align:center; font: 1.4em arial, sans-serif; margin-top:1.5em; margin-bottom:2em">Its that simple...just how we like it!</p>
+        <form action="" class="col-md-8 col-centered">
+            <div class="form-group">
+                <button formaction="" class="btn btn-lg col-xs-12" style="color:#fff; margin-bottom:0.5em">FIND A SESSION</button>
+            </div>
+            <div class="form-group">
+                <button formaction="create_session.html" class="btn btn-lg bg-primary col-xs-12">CREATE A SESSION</button>
+            </div>
+        </form>
+        <!-- <div class="row" style="margin-top:3em; margin-bottom:1em;">
+            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 col-centered">
+                <button class="btn btn-lg bg-primary col-xs-12">
+                    CREATE A SESSION
+                </button>
             </div>
         </div>
         <div class="row">
-            <h3 class="col-xs-12">&nbsp;</h3>
+            <div class="col-xs-12 col-sm-9 col-md-8 col-lg-6 col-centered">
+                <button formaction="http://google.com" class="btn btn-lg col-xs-12" style="color:#fff;">
+                    FIND A SESSION
+                </button>
+            </div>
         </div>
+        <form>
+            <button formaction="index.html">Go to stackoverflow!</button>
+        </form> -->
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
