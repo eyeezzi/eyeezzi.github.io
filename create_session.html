@@ -13,6 +13,31 @@
         float: none;
         margin: 0 auto;
     }
+
+    header h1 {
+        text-align: center;
+        margin-top: 1em;
+        color: #ccc;
+        font: 1.5em arial, sans-serif;
+        margin-bottom: 0
+    }
+
+    /*sm*/
+    @media(min-width:34em) {
+        header h1 { font-size: 2em; }
+    }
+    
+    /*md*/
+    @media(min-width:48em) {
+        p.info { font-size: 1.85em; }
+        p.info:nth-child(3) { font-size: 1.3em; margin-bottom: 3em}
+    }
+        
+    /*lg*/
+    @media(min-width:62em) {}
+    
+    /*xl*/
+    @media(min-width:75em) {}
     </style>
 </head>
 

@@ -17,20 +17,67 @@
     .col-margin {
         margin-bottom: 10px;
     }
+
+    /*xs*/
+    header h1 {
+        text-align: center; 
+        margin-top: 1em; 
+        color: #ccc;
+        font: 2em arial, sans-serif;
+        margin-bottom: 0
+    }
+    header p {
+        color: #ccc; 
+        text-align: center;
+    }
+    p.info {
+        color: #555;
+        text-align: center; 
+        font: 1.5em arial, sans-serif; 
+    }
+    p.info:nth-child(1) {
+        margin-top: 1.5em;
+    }
+    p.info:nth-child(3) {
+        font-size: 1em;
+        margin-top: 1.5em;
+        margin-bottom: 4em;
+        color: #999;
+    }
+    footer {
+        margin-top: 5em;
+    }
+    
+    /*sm*/
+    @media(min-width:34em) {
+        header h1 { font-size: 2.5em; }
+    }
+    
+    /*md*/
+    @media(min-width:48em) {
+        p.info { font-size: 1.85em; }
+        p.info:nth-child(3) { font-size: 1.3em; margin-bottom: 3em}
+    }
+        
+    /*lg*/
+    @media(min-width:62em) {}
+    
+    /*xl*/
+    @media(min-width:75em) {}
     </style>
 </head>
 
 <body>
     <header class="container-fluid">
-        <h1 style="text-align:center; margin-top: 1em; color:#ccc">Studywitme</h1>
-        <p style="color:#ccc; text-align:center">Study socially</p>
+        <h1>Studywitme</h1>
+        <p>Study socially</p>
         <hr>
     </header>
     <div class="container" height="100%">
-        <p style="color:#555; text-align:center; font:2em arial, sans-serif; margin-top:1.5em">Find someone studying, join them.</p>
-        <p style="color:#555; text-align:center; font:2em arial, sans-serif">Studying? Let others join you.</p>
-        <p style="color:#888; text-align:center; font: 1.4em arial, sans-serif; margin-top:1.5em; margin-bottom:2em">Its that simple...just how we like it!</p>
-        <form action="" class="col-md-8 col-centered">
+        <p class="info">Find someone studying, join them.</p>
+        <p class="info">Studying? Let others join you.</p>
+        <p class="info">Its that simple...just how we like it!</p>
+        <form action="" class="col-sm-9 col-md-8 col-lg-7 col-xl-6 col-centered">
             <div class="form-group">
                 <button formaction="" class="btn btn-lg col-xs-12" style="color:#fff; margin-bottom:0.5em">FIND A SESSION</button>
             </div>
@@ -39,7 +86,7 @@
             </div>
         </form>
     </div>
-    <footer class="container-fluid" style="margin-top:2em">
+    <footer class="container-fluid">
         <hr>
         <p class="" style="text-align:center; color:#ccc; font: 1.4em arial, sans-serif; margin-bottom:0">&copy; 2016 Studywitme.com</p>
         <p style="text-align:center; color:#ccc; font: 0.8em arial, sans-serif">Licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a></p>
