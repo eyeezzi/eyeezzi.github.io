@@ -224,7 +224,7 @@
 		padding:0;
 		margin: 0;
 		margin-bottom: 20px;
-		/*min-width: 380px;*/
+		min-width: 290px;
 		max-width: 100%;
 		/*max-width: 500px;*/
     }
@@ -249,8 +249,8 @@
     }
     .host-section {
     	display: flex;
-    	flex-flow: row wrap;
-    	align-items: center;
+    	flex-flow: column nowrap;
+    	/*align-items: center;*/
     	padding: 20px 16px;
 
     }
@@ -260,25 +260,33 @@
     .host-section *:nth-child(3) { /*spacer*/
     	flex: 1 1 auto; /*grow shrink basis*/
     }
-    .host-section img {
-    	width: 50px;
-    	height: 50px;
-    	border-radius: 25px;
+    .host-info {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
     }
-    .host-section div {
+    .host-pic {
+    	width: 60px;
+    	height: 60px;
+    	border-radius: 30px;
+    }
+    .host-name{
     	padding-left: 14px;
     	display: flex;
     	flex-flow: column nowrap;
     }
-    .host-section div span:nth-child(1) {
+    .host-name span:nth-child(1) {
 		font-size: 18px;
 		font-weight: bold;
 		line-height: 24px;
     }
-    .host-section div span:nth-child(2) {
+    .host-name span:nth-child(2) {
 		font-size: 16px;
 		line-height: 20px;
 		color: #ccc;
+    }
+    .action-btn {
+        margin-top: 10px;
     }
     /*.join-btn {
     	padding-left: 12px;
@@ -312,13 +320,15 @@
 				    </div>
 				    <div class="card-block">
 			    		<div class="host-section">
-				    		<img src="http://lorempixel.com/100/100/people" alt="">
-					    	<div>
-					    		<span>Loressa Marty</span>
-					    		<span>Software systems</span>
-					    	</div>
-					    	<span>&nbsp;</span>
-					    	<a href="#" class="btn btn-primary">Join Session</a>
+                            <div class="host-info">
+                                <img class="host-pic" src="http://lorempixel.com/100/100/people" alt="">
+                                <div class="host-name">
+                                    <span>Loressa Marty</span>
+                                    <span>Software systems</span>
+                                </div>
+                            </div>
+					    	<!-- <span>&nbsp;</span> -->
+					    	<a href="#" class="btn btn-primary action-btn">Join Session</a>
 			    		</div>
 				    </div>
 				</div>
